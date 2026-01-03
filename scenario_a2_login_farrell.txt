@@ -1,0 +1,16 @@
+# Scenario A2: Staff login
+
+# Login as Farrell
+su - staff_farrell
+
+# Navigate to the internal folder
+cd /srv/project_data/internal_files
+
+# Verify that we can see the file
+ls -l
+
+# Verify that we can create new file
+touch farrells_court_files.txt
+
+# Log out
+exit

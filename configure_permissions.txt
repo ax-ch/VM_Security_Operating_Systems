@@ -1,0 +1,22 @@
+# configure permissions:
+
+# Create the project directories
+sudo mkdir -p /srv/project_data/internal_files
+sudo mkdir -p /srv/project_data/public_info
+
+# Set Ownership
+# We give ownership to root, but group ownership to 'staff_team'
+# This allows Anita and Farrell to access these folders.
+sudo chown root:staff_team /srv/project_data/internal_files
+sudo chown root:staff_team /srv/project_data/public_info
+
+# Secure the internal folder (Staff = RWX, Guest = None)
+# 770 means: Owner(7), Group-Staff(7), Others-Guest(0)
+sudo chmod 770 /srv/project_data/internal_files
+
+# Secure the PUBLIC folder (Staff = RWX, Guest = Read Only)
+# 775 means: Owner(7), Group-Staff(7), Others-Guest(5 - read/execute)
+sudo chmod 775 /srv/project_data/public_info
+
+# Create a dummy secret file to test later
+sudo touch /srv/project_data/internal_files/farrells_drug_dealing_police_case.txt

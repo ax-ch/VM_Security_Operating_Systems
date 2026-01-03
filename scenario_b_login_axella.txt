@@ -1,0 +1,22 @@
+# Scenario B: Guest login
+
+# Login as Axella
+su - guest_axella
+
+# Try to enter the internal folder (FAIL)
+cd /srv/project_data/internal_files
+# (System should say: -bash: cd: permission denied)
+
+# Try to list the folder contents (FAIL)
+ls -l /srv/project_data/internal_files
+# (System should say: Permission denied)
+
+# Go to Public folder (SUCCESS)
+cd /srv/project_data/public_info
+
+# Try to delete or create a file in Public (FAIL - Guest is read-only)
+touch gift_for_you_virus.exe
+# (System should say: Permission denied)
+
+# Log out
+exit

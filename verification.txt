@@ -1,0 +1,10 @@
+# verification:
+
+# Verify your current identity
+whoami
+
+# Verify system information (Hostname & OS)
+hostnamectl
+
+# Check network connectivity (for NAT config check)
+ping -c 3 google.com

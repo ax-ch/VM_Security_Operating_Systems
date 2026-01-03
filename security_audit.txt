@@ -1,0 +1,4 @@
+# security audit:
+
+# Show who tried to use 'sudo' or log in recently
+sudo tail -n 10 /var/log/auth.log
